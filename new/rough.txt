@@ -1,0 +1,40 @@
+<?php 
+require 'core.inc.php';
+require 'connect.inc.php';
+if (!loggedin())
+{
+
+
+
+if(isset($_POST['username'])&&isset($_POST['password'])&&isset($_POST['confirm_password'])&&isset($_POST['firstname'])&&isset($_POST['surname']))
+{
+$username =$_POST['username'];
+$password =$_POST['password'];
+$confirm_password =$_POST['confirm_password'];
+$firstname =$_POST['firstname'];
+$surname =$_POST['surname'];
+
+if(!empty($username) && !empty($password) && !empty($confirm_password) && !empty($firstname) && !empty($surname))
+{
+echo 'ok';
+}
+else
+{
+echo 'all fields are required.';
+}
+}
+?>
+
+<form action="register.php" method="POST">
+username: <br> <input type= "text" name="username"> <br><br>
+password: <br> <input type= "password" name="password"> <br><br>
+confirm password: <br> <input type= "password" name="password"> <br><br>
+firstname: <br> <input type= "text" name="firstname"> <br><br>
+surname: <br> <input type= "text" name="surname"> <br><br>
+<input type="submit" value="register">
+</form>
+
+
+
+<?php
+}
